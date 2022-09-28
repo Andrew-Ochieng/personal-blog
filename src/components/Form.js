@@ -1,10 +1,11 @@
+// imports
 
 
 const Form = () => {
     return ( 
         <div className="form">
+            This is a form
             
-            Blaballa
         </div>
      );
 }
