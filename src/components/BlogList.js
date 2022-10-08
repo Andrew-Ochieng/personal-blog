@@ -7,7 +7,7 @@ const BlogList = ({ blogs, title, handleDelete }) => {
 
   
   return ( 
-      <div className="blog-list lg:m-32 md:m-16 m-8">
+      <div className="blog-list ">
         <h1 className="md:text-3xl text-2xl font-semibold my-2">{title}</h1>
         <div className="grid sm:grid-cols-3 md:gap-12 sm:gap-6">
           { blogs.map((blog) => (

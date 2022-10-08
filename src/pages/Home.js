@@ -1,7 +1,7 @@
 // imports
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "../components/BlogList";
+import HeroBlog from "../components/HeroBlog";
 
 
 const Home = () => {
@@ -27,8 +27,9 @@ const Home = () => {
 
 
     return ( 
-        <div className="home">
-            
+        <div className="home lg:mx-32 md:mx-16 mx-8 md:my-16 my-8">
+            <HeroBlog />
+
             {blogs && <BlogList blogs={blogs} handleDelete={handleDelete} title = "All Blogs!"/>}
             
             {/* filter blogs */}
