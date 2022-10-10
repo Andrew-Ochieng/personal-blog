@@ -1,6 +1,7 @@
 // imports
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BlogDetails from './components/BlogDetails';
 import Create from './pages/Create';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -21,7 +22,9 @@ function App() {
           <Navbar />
           
             <Routes>
-              <Route path='/' element={ <Home /> }/>
+              <Route path='/' element={ <Home /> }>
+                <Route path='blogdetails' element={ <BlogDetails /> } />
+              </Route>
               <Route path='/about' element={ <About /> }/>
               <Route path='/create' element={ <Create /> }/>
             </Routes>
