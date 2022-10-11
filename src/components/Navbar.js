@@ -10,7 +10,7 @@ const Navbar = () => {
                 <nav className='bg-pink-500 py-4'>
                     <div className="navbar flex justify-around items-center ">
                         <div>
-                            <h1 className='md:text-3xl text-2xl uppercase font-semibold '>The Wreat Blog</h1>
+                            <h1 className='md:text-3xl text-2xl uppercase font-semibold '>Personal Blog</h1>
 
                             
                         </div>
