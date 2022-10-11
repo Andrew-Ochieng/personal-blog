@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
   // js here
-  const { data: blogs, error, isLoading} = useFetch('http://localhost:8000/blogs')
+  const { data: blogs, error, isLoading} = useFetch('https://personal-blogsite.herokuapp.com/blogs')
   
 
   return (

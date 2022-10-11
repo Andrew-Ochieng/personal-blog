@@ -6,7 +6,7 @@ import useFetch from "../components/useFetch";
 
 
 const Home = () => {
-  const { data: blogs, error, isLoading} = useFetch('http://localhost:8000/blogs')
+  const { data: blogs, error, isLoading} = useFetch('https://personal-blogsite.herokuapp.com/blogs')
     
 
   return ( 

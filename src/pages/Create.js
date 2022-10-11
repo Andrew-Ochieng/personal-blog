@@ -17,7 +17,7 @@ const Create = () => {
 
         setIsLoading(true)
         // console.log(blog)
-        fetch('http://localhost:8000/blogs', {
+        fetch('https://personal-blogsite.herokuapp.com/blogs', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
@@ -87,13 +87,6 @@ const Create = () => {
                     Add Blog
                 </button>
             </form>
-
-            <div>
-                <p>{title}</p>
-                <p>{author}</p>
-                <p>{imageUrl}</p>
-                <p>{body}</p>
-            </div>
             
         </div>
      );
