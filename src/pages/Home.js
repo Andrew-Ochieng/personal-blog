@@ -6,7 +6,7 @@ import useFetch from "../components/useFetch";
 
 
 const Home = () => {
-  const { data: blogs, error, isLoading, handleDelete} = useFetch('http://localhost:8000/blogs')
+  const { data: blogs, error, isLoading} = useFetch('https://personal-blogsite.herokuapp.com/blogs')
     
 
   return ( 
@@ -14,12 +14,13 @@ const Home = () => {
         
         { isLoading && <h4 className="text-pink-500 font-semibold md:text-2xl text-xl">Loading data..</h4>}
         { error && <h4 className="text-red-500">{ error }</h4>}
-          <HeroBlog />
 
-          <BlogList blogs={blogs} title = "All Blogs!"/>
-          
-          {/* filter blogs */}
-          <BlogList blogs={blogs.filter((blog) => blog.title === 'John Doe')} title = "John Doe's Blogs!" handleDelete={handleDelete}/>
+        <HeroBlog />
+
+        <BlogList blogs={blogs} title = "All Blogs!"/>
+        
+        {/* filter blogs */}
+        <BlogList blogs={blogs.filter((blog) => blog.title === 'John Doe')} title = "John Doe's Blogs!" />
 
           
       </div>
