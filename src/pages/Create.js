@@ -5,26 +5,30 @@ import { useState } from "react";
 
 const Create = () => {
     const [title, setTitle] = useState('');
-    const [author, setAuthor] =useState('');
+    const [author, setAuthor] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [body, setBody] = useState('');
-    const [isLoading, setIsLoading] = useState(false)
 
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        
         const blog = { title, author, imageUrl, body }
 
-        setIsLoading(true)
-        // console.log(blog)
         fetch('https://personal-blogsite.herokuapp.com/blogs', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
         }).then(() => {
             setTimeout(() => {
-                console.log('new blog added')
-                setIsLoading(false)
+                alert('You added a new blog successfully!')
+
+                // clear inputs after submit
+                setTitle('')
+                setAuthor('')
+                setImageUrl('')
+                setBody('')
+
             }, 1000);
         })
     

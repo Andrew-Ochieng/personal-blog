@@ -10,7 +10,7 @@ const Home = () => {
     
 
   return ( 
-      <div className="home lg:mx-32 md:mx-16 mx-8 md:my-16 my-8">
+      <div className="home lg:mx-28 md:mx-12 mx-6 md:my-16 my-8">
         
         { isLoading && <h4 className="text-pink-500 font-semibold md:text-2xl text-xl">Loading data..</h4>}
         { error && <h4 className="text-red-500">{ error }</h4>}
@@ -20,7 +20,7 @@ const Home = () => {
         <BlogList blogs={blogs} title = "All Blogs!"/>
         
         {/* filter blogs */}
-        <BlogList blogs={blogs.filter((blog) => blog.title === 'John Doe')} title = "John Doe's Blogs!" />
+        <BlogList blogs={blogs.filter((blog) => blog.author === 'Andrew')} title = "Andrew's Blogs!" />
 
           
       </div>

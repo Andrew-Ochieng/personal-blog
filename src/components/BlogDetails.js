@@ -18,6 +18,7 @@ const BlogDetails = () => {
                         <p className="text-xl text-pink-500 font-medium">Written by {blog.author}</p>
                         <img className="my-4 w-full" src={blog.imageUrl} alt="Details images here..." />
                         <div className="text-lg text-gray-800">{blog.body}</div>
+                        {/* <button className="bg-green-400 px-3 py-2 mt-2 rounded-md" onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
                     </article>
                 </div>
             )}
