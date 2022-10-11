@@ -8,12 +8,14 @@ const Create = () => {
     const [author, setAuthor] =useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [body, setBody] = useState('');
+    const [isLoading, setIsLoading] = useState(false)
 
     
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, author, imageUrl, body }
 
+        setIsLoading(true)
         // console.log(blog)
         fetch('http://localhost:8000/blogs', {
             method: "POST",
@@ -22,7 +24,8 @@ const Create = () => {
         }).then(() => {
             setTimeout(() => {
                 console.log('new blog added')
-            }, 2000);
+                setIsLoading(false)
+            }, 1000);
         })
     
     }
@@ -52,7 +55,7 @@ const Create = () => {
                         name="author" 
                         placeholder="Write Name.."
                         value={author}
-                        onChange={(e) => setAuthor(e.target.author)}
+                        onChange={(e) => setAuthor(e.target.value)}
                     />
                 </div>
                 <div className="my-2">
@@ -64,7 +67,7 @@ const Create = () => {
                         name="imageUrl" 
                         placeholder="Enter Image Url.."
                         value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.imageUrl)}
+                        onChange={(e) => setImageUrl(e.target.value)}
                     />
                 </div>
                 <div className="my-2">
@@ -77,7 +80,7 @@ const Create = () => {
                         cols="30" 
                         rows="5"
                         value={body}
-                        onChange={(e) => setBody(e.target.body)}
+                        onChange={(e) => setBody(e.target.value)}
                     ></textarea>
                 </div>
                 <button className="w-full py-3 bg-cyan-400 rounded-lg cursor-pointer hover:bg-cyan-500 duration-200">

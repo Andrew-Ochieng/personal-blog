@@ -4,7 +4,7 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
     const { id } = useParams()
-    const { data: blog, isLoading, error} = useFetch('https://personal-blogsite.herokuapp.com/blogs/' + id)
+    const { data: blog, isLoading, error} = useFetch('http://localhost:8000/blogs/' + id)
 
     return ( 
         <div className="blog-details md:m-16 m-8">
@@ -16,7 +16,7 @@ const BlogDetails = () => {
                     <article className="">
                         <h2 className="font-semibold md:text-3xl text-xl">{blog.title}</h2>
                         <p className="text-xl text-pink-500 font-medium">Written by {blog.author}</p>
-                        <img className="my-4 w-full" src={blog.image_url} alt="" />
+                        <img className="my-4 w-full" src={blog.image_url} alt="Details images here..." />
                         <div className="text-lg text-gray-800">{blog.body}</div>
                     </article>
                 </div>
