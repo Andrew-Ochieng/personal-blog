@@ -5,15 +5,17 @@ import BlogDetails from './components/BlogDetails';
 import Create from './pages/Create';
 import About from './pages/About';
 import Home from './pages/Home';
+import useFetch from './components/useFetch';
 import { BrowserRouter,  Routes, Route } from 'react-router-dom';
+// import { useState, useEffect } from "react";
 import './App.css';
+
 
 
 function App() {
   // js here
-    
- 
-
+  const { data: blogs, error, isLoading} = useFetch('http://localhost:8000/blogs')
+  
 
   return (
     <div>
@@ -22,10 +24,9 @@ function App() {
           <Navbar />
           
             <Routes>
-              <Route path='/' element={ <Home /> }>
-                <Route path='blogdetails' element={ <BlogDetails /> } />
-              </Route>
+              <Route path='/' element={ <Home blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/about' element={ <About /> }/>
+              <Route path='/:id' element={ <BlogDetails blogs={blogs} /> }/>
               <Route path='/create' element={ <Create /> }/>
             </Routes>
 
