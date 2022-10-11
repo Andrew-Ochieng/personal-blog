@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className="bg-gray-900 ">
                 <div className="md:p-16 p-6 md:flex justify-around "> 
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
-                        <h1 className="md:text-xl text-lg font-semibold uppercase text-pink-500">The Wreat</h1>
+                        <h1 className="md:text-xl text-lg font-semibold uppercase text-pink-500">Personal Blog</h1>
                         <p>Lorem ipsum dolor sit amet consectetur.</p>
                         <div className="space-x-4 text-xl">
                             <i className="hover:text-pink-500 fa fa-facebook"></i>
