@@ -7,7 +7,7 @@ const BlogDetails = () => {
     const { data: blog, isLoading, error} = useFetch('https://personal-blogsite.herokuapp.com/blogs/' + id)
 
     return ( 
-        <div className="blog-details md:m-16 m-8">
+        <div className="blog-details md:m-24 m-6">
             <h1 className="md:text-3xl text-xl font-semibold md:mb-8 mb-4 text-gray-900">Blog Details - <span className="text-pink-500">{id}</span></h1>
             { isLoading && <h4 className="text-pink-500 font-semibold md:text-2xl text-xl">Loading data..</h4>}
             { error && <h4 className="text-red-500">{ error }</h4>}

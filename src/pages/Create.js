@@ -36,7 +36,7 @@ const Create = () => {
 
 
     return ( 
-        <div className="form flex items-center justify-center md:my-16 my-8">
+        <div className="form flex items-center justify-center md:my-16 my-8 md:mx-24 mx-6">
             <form onSubmit={handleSubmit} >
                 <div className="my-2">
                     <label className="md:text-xl font-medium" htmlFor="title">Title</label><br/>
