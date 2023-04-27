@@ -5,13 +5,6 @@ const useFetch = (url) => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(true) // set loading data
     const [error, setError] = useState(null)
-        
-    // function handleDelete (id) {
-    //     const { data: blogs} = useFetch('http://localhost:8000/blogs')
-
-    //     const newBlogs = blogs.filter((blog) => blog.id !== id)
-    //     setData(newBlogs)
-    // }
 
     useEffect(() => {
         setTimeout(() => {
@@ -25,7 +18,7 @@ const useFetch = (url) => {
                 })
                 .then((data) => {
                     // console.log(data)
-                    setData(data)
+                    setData(data.data)
                     setIsLoading(false)
                     setError(null)
                 })

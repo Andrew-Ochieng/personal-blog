@@ -15,7 +15,7 @@ const Create = () => {
         
         const blog = { title, author, imageUrl, body }
 
-        fetch('https://personal-blogsite.herokuapp.com/blogs', {
+        fetch('http://localhost:1337/api/blogs', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)

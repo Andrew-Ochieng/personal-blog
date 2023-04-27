@@ -1,14 +1,9 @@
-// imports
-// import { useState, useEffect } from "react";
 import BlogList from "../components/BlogList";
 import HeroBlog from "../components/HeroBlog";
-import useFetch from "../components/useFetch";
 
 
-const Home = () => {
-  const { data: blogs, error, isLoading} = useFetch('https://personal-blogsite.herokuapp.com/blogs')
-    
-
+const Home = ({blogs, error, isLoading}) => {
+  console.log(blogs)
   return ( 
       <div className="home lg:mx-28 md:mx-12 mx-6 md:my-16 my-8">
         
@@ -20,7 +15,7 @@ const Home = () => {
         <BlogList blogs={blogs} title = "All Blogs!"/>
         
         {/* filter blogs */}
-        <BlogList blogs={blogs.filter((blog) => blog.author === 'Andrew')} title = "Andrew's Blogs!" />
+        <BlogList blogs={blogs.filter((blog) => blog.attributes.author === 'Andrew')} title = "Andrew's Blogs!" />
 
           
       </div>
