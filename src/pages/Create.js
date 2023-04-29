@@ -6,30 +6,29 @@ import { useState } from "react";
 const Create = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
+    const [image, setImage] = useState('');
     const [body, setBody] = useState('');
 
     
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        const blog = { title, author, imageUrl, body }
+        const blog = { title, author, image, body }
 
-        fetch('http://localhost:1337/api/blogs', {
+        fetch('http://localhost:1337/api/blogs/', {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
         }).then(() => {
             setTimeout(() => {
-                alert('You added a new blog successfully!')
-
                 // clear inputs after submit
                 setTitle('')
                 setAuthor('')
-                setImageUrl('')
+                setImage('')
                 setBody('')
 
             }, 1000);
+            alert('You added a new blog successfully!')
         })
     
     }
@@ -67,11 +66,10 @@ const Create = () => {
                     <input 
                         className="my-1 rounded-lg outline-none border-2 pl-2 pr-3 py-3 w-full" 
                         required
-                        type="url" 
-                        name="imageUrl" 
-                        placeholder="Enter Image Url.."
-                        value={imageUrl}
-                        onChange={(e) => setImageUrl(e.target.value)}
+                        type="file" 
+                        name="image" 
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
                     />
                 </div>
                 <div className="my-2">
