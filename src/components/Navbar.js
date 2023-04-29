@@ -16,7 +16,7 @@ const Navbar = () => {
                 <nav className='bg-pink-500 py-4 px-4'>
                     <div className="navbar md:flex  justify-around items-center " >
                         <div className='flex items-center justify-between'>
-                            <Link to='/' className='md:text-3xl text-2xl uppercase font-semibold '>Personal Blog</Link>
+                            <Link to='/' className='md:text-3xl text-2xl uppercase font-semibold '>Andrew Ochieng</Link>
                             
                             <button onClick={showMenu} className="md:hidden">
                                 <i className="text-xl fa fa-bars"></i> 

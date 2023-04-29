@@ -23,7 +23,7 @@ function App() {
             <Routes>
               <Route path='/' element={ <Home blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/about' element={ <About /> }/>
-              <Route path='/:id' element={ <BlogDetails blogs={blogs} /> }/>
+              <Route path='/:id' element={ <BlogDetails blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/create' element={ <Create /> }/>
             </Routes>
           <Footer />

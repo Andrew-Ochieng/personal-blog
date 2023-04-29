@@ -21,13 +21,13 @@ const About = () => {
                         <a href='#contact' className="mt-4 md:text-xl text-base font-semibold border-2 border-pink-500 hover:bg-pink-500 duration-500 px-4 py-3 rounded-lg">
                             Hire Me
                         </a>
-                        <a href={ Resume } className="mt-4 md:text-xl text-base font-semibold bg-pink-600 text-white hover:text-gray-900 duration-500 px-4 py-3 rounded-lg">
+                        <a href={ Resume } target='_blank' className="mt-4 md:text-xl text-base font-semibold bg-pink-600 text-white hover:text-gray-900 duration-500 px-4 py-3 rounded-lg">
                             Download Resume
                         </a>
                     </div>
                 </div>
             </div>
-            
+        
         </div>
      );
 }

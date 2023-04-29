@@ -1,26 +1,39 @@
-import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+import { useNavigate, useParams } from "react-router-dom";
+import { FiChevronsLeft } from "react-icons/fi"
 
-
-const BlogDetails = () => {
+const BlogDetails = ({blogs, error, isLoading}) => {
+    const navigate = useNavigate()
     const { id } = useParams()
-    const { data: blog, isLoading, error} = useFetch('http://localhost:1337/api/blogs?populate=image/' + id)
 
-    console.log(blog.id)
-    
+    let blog = {}
+    if (blog) {
+            let filteredBlog = blogs.filter(blog => blog.id == id)
+            blog = filteredBlog[0]
+    } else {
+            blog = {}
+    }
+    console.log(blog)
+
+    const handleBackToBlogs = () => {
+        navigate("/")
+    }
+
     return ( 
         <div className="blog-details md:m-24 m-6">
-            <h1 className="md:text-3xl text-xl font-semibold md:mb-8 mb-4 text-gray-900">Blog Details - <span className="text-pink-500">{id}</span></h1>
+            <h1 className="md:text-3xl text-xl font-semibold md:mb-8 mb-4 text-gray-800">Blog Details</h1>
             { isLoading && <h4 className="text-pink-500 font-semibold md:text-2xl text-xl">Loading data..</h4>}
             { error && <h4 className="text-red-500">{ error }</h4>}
-            {blog.data && (
-                <div className="flex items-center ">
+            {blog && (
+                <div className="grid sm:grid-cols-2 md:gap-16 gap-8">
+                    <img className="mb-4 w-full rounded-lg" src={`http://localhost:1337${blog.attributes.image.data.attributes.url}`} alt="" />
                     <article className="">
-                        <h2 className="font-semibold md:text-3xl text-xl">{blog.attributes.title}</h2>
-                        <p className="text-xl text-pink-500 font-medium">Written by {blog.author}</p>
-                        <img className="my-4 w-full" src={blog.image} alt="Details images here..." />
-                        <div className="text-lg text-gray-800">{blog.content}</div>
-                        {/* <button className="bg-green-400 px-3 py-2 mt-2 rounded-md" onClick={() => handleDelete(blog.id)}>Delete Blog</button> */}
+                        <h2 className="font-semibold md:text-3xl text-xl text-gray-800">{blog.attributes.title}</h2>
+                        <p className="md:text-lg text-pink-500 font-medium my-1">Written by: {blog.attributes.author}</p>
+                        <div className="md:text-base text-gray-800 font-light">{blog.attributes.content}</div>
+                        <button className="flex items-center font-medium bg-green-400 hover:text-green-100 hover:bg-green-600 px-3 py-2 mt-2 rounded-md" onClick={handleBackToBlogs}>
+                            <FiChevronsLeft className="mr-1"/> 
+                            Back
+                        </button>
                     </article>
                 </div>
             )}
