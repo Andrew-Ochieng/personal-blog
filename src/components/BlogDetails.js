@@ -7,7 +7,7 @@ const BlogDetails = ({blogs, error, isLoading}) => {
 
     let blog = {}
     if (blog) {
-            let filteredBlog = blogs.filter(blog => blog.id == id)
+            let filteredBlog = blogs.filter(blog => blog.id === id)
             blog = filteredBlog[0]
     } else {
             blog = {}

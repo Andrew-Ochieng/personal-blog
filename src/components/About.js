@@ -5,7 +5,7 @@ import Resume from '../assets/Resume.pdf'
 const About = () => {
 
     return ( 
-        <div className='md:mx-12 mx-6 md:my-24 my-12'>
+        <div id='about-me' className='md:mx-12 mx-6 md:py-32 py-16'>
             <div className='md:flex justify-around'>
                 <div>
                     <img className='w-full rounded-full' src={Me} alt="" />
@@ -21,7 +21,7 @@ const About = () => {
                         <a href='#contact' className="mt-4 md:text-xl text-base font-semibold border-2 border-pink-500 hover:bg-pink-500 duration-500 px-4 py-3 rounded-lg">
                             Hire Me
                         </a>
-                        <a href={ Resume } target='_blank' className="mt-4 md:text-xl text-base font-semibold bg-pink-600 text-white hover:text-gray-900 duration-500 px-4 py-3 rounded-lg">
+                        <a href={ Resume } target='_blank' rel='noreferrer' className="mt-4 md:text-xl text-base font-semibold bg-pink-600 text-white hover:text-gray-900 duration-500 px-4 py-3 rounded-lg">
                             Download Resume
                         </a>
                     </div>

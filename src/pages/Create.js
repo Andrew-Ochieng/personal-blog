@@ -1,5 +1,4 @@
-// imports
-
+import axios from "axios";
 import { useState } from "react";
 
 
@@ -15,21 +14,36 @@ const Create = () => {
         
         const blog = { title, author, image, body }
 
-        fetch('http://localhost:1337/api/blogs/', {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(blog)
-        }).then(() => {
-            setTimeout(() => {
-                // clear inputs after submit
-                setTitle('')
-                setAuthor('')
-                setImage('')
-                setBody('')
+        axios.post('http://localhost:1337/api/blogs', {
+            title,
+            author,
+            image,
+            body
+          })
+          .then(function (response) {
+            console.log(response);
 
-            }, 1000);
             alert('You added a new blog successfully!')
-        })
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        // fetch('http://localhost:1337/api/blogs/' , {
+        //     method: "POST",
+        //     headers: {"Content-Type": "application/json"},
+        //     body: JSON.stringify(blog)
+        // }).then(() => {
+        //     setTimeout(() => {
+        //         // clear inputs after submit
+        //         setTitle('')
+        //         setAuthor('')
+        //         setImage('')
+        //         setBody('')
+
+        //     }, 1000);
+        //     alert('You added a new blog successfully!')
+        // })
     
     }
 
@@ -85,7 +99,7 @@ const Create = () => {
                         onChange={(e) => setBody(e.target.value)}
                     ></textarea>
                 </div>
-                <button className="w-full py-3 bg-cyan-400 rounded-lg cursor-pointer hover:bg-cyan-500 duration-200">
+                <button className="w-full py-3 text-white font-semibold uppercase bg-cyan-400 rounded-lg cursor-pointer hover:bg-cyan-500 duration-200">
                     Add Blog
                 </button>
             </form>
