@@ -13,10 +13,10 @@ const Navbar = () => {
     
     return ( 
             <div className="navbar-container">
-                <nav className='bg-pink-500 py-4 px-4'>
+                <nav className='bg-green-500 py-4 px-4 text-gray-100'>
                     <div className="navbar md:flex  justify-around items-center " >
                         <div className='flex items-center justify-between'>
-                            <Link to='/' className='md:text-3xl text-2xl uppercase font-semibold '>Andrew Ochieng</Link>
+                            <Link to='/' className='md:text-3xl text-2xl uppercase font-semibold '>Tech Talk</Link>
                             
                             <button onClick={showMenu} className="md:hidden">
                                 <i className="text-xl fa fa-bars"></i> 
