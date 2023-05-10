@@ -19,11 +19,11 @@ const Footer = () => {
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
                         <h3 className="font-medium text-green-500 md:text-xl text-lg">About</h3>
                         <ul className="space-y-1">
-                            <li>Energy</li>
-                            <li>Agriculture</li>
-                            <li>Transport</li>
-                            <li>Real Estate</li>
-                            <li>Waste Management</li>
+                            <li>Web Dev</li>
+                            <li>Mobile Dev</li>
+                            <li>UI/UX Design</li>
+                            <li>Graphics Design</li>
+                            <li>Cyber Security</li>
                         </ul>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
@@ -34,7 +34,6 @@ const Footer = () => {
                             <li>North America</li>
                             <li>South America</li>
                             <li>Europe</li>
-                            <li>Antarctica</li>
                         </ul>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">

@@ -1,13 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { FiChevronsLeft } from "react-icons/fi"
 
-const BlogDetails = ({blogs, error, isLoading}) => {
+const BlogDetails = ({filteredBlogs, error, isLoading}) => {
     const navigate = useNavigate()
     const { id } = useParams()
 
     let blog = {}
     if (blog) {
-            let filteredBlog = blogs.filter(blog => blog.id === id)
+            let filteredBlog = filteredBlogs.filter(blog => blog.id === id)
             blog = filteredBlog[0]
     } else {
             blog = {}

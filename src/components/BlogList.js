@@ -1,35 +1,12 @@
 import { Link } from "react-router-dom";
 import { FiChevronsRight } from "react-icons/fi"
-import { useState } from "react";
+// import { useState } from "react";
 
-const BlogList = ({ blogs, title }) => {
-  const [search, setSearch] = useState("")
-
-  const handleSearch = (e) => {
-    e.preventDefault()
-
-    setSearch(e.target.value)
-
-  }
-
-  const filteredBlogs = blogs.filter((blog) => blog.attributes.title.toLowerCase().includes(search.toLowerCase()))
-  
+const BlogList = ({ filteredBlogs, title }) => {
 
   return ( 
       
       <>
-        <div>
-            <form onSubmit={handleSearch} className="flex">
-              <input 
-                  type='text'
-                  value={search}
-                  placeholder="Search blogs..."
-                  onChange={handleSearch}
-                  className="bg-gray-100 outline-none py-2 px-3 mb-4 w-full rounded-md"
-              />
-              {/* <FiSearch className="absolute z-[100] text-xl" /> */}
-            </form>
-        </div>
 
         <div className="blog-list md:mb-32 mb-16">
           <h1 className="md:text-3xl text-2xl font-semibold my-2">{title}</h1>
