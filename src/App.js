@@ -22,7 +22,7 @@ function App() {
           <Navbar />
             <Routes>
               <Route path='/' element={ <Home blogs={blogs} error={error} isLoading={isLoading} /> }/>
-              <Route path='/:id' element={ <BlogDetails blogs={blogs} error={error} isLoading={isLoading} /> }/>
+              <Route path='/blogs/:id' element={ <BlogDetails blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/about' element={ <About /> }/>
               <Route path='/articles' element={ <Articles /> }/>
             </Routes>
