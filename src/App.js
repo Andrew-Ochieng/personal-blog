@@ -2,8 +2,9 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BlogDetails from './components/BlogDetails';
-import About from './pages/About';
 import Home from './pages/Home';
+import About from './pages/About';
+import Articles from './pages/Articles';
 import UseFetch from './components/UseFetch';
 import { BrowserRouter,  Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -23,6 +24,7 @@ function App() {
               <Route path='/' element={ <Home blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/:id' element={ <BlogDetails blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/about' element={ <About /> }/>
+              <Route path='/articles' element={ <Articles /> }/>
             </Routes>
           <Footer />
         </div>
