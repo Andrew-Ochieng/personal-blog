@@ -5,7 +5,7 @@ import Resume from '../assets/Resume.pdf'
 const About = () => {
 
     return ( 
-        <div id='about-me' className='md:mx-12 mx-6 md:py-32 py-16'>
+        <div className='md:mx-12 mx-6 md:py-32 py-16'>
             <div className='grid sm:grid-cols-2 md:gap-16 gap-8'>
                 <div className=''>
                     <img className='rounded-full' src={Me} alt="" />

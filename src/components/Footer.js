@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <Subscribe />
             <footer className="bg-gray-900 ">
-                <div className="md:p-16 p-6 md:flex justify-around "> 
+                <div className="md:p-16 p-6 md:flex justify-around md:text-base text-sm"> 
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
                         <h1 className="md:text-xl text-lg font-semibold uppercase text-green-500">Tech Talk</h1>
                         <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -17,7 +17,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
-                        <h3 className="font-medium text-green-500 md:text-xl text-lg">About</h3>
+                        <h3 className="font-medium text-green-500 md:text-xl text-lg">Categories</h3>
                         <ul className="space-y-1">
                             <li>Web Dev</li>
                             <li>Mobile Dev</li>
@@ -27,13 +27,13 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
-                        <h3 className="font-medium text-green-500 md:text-xl text-lg">Continents</h3>
+                        <h3 className="font-medium text-green-500 md:text-xl text-lg">Popular Topics</h3>
                         <ul className="space-y-1">
-                            <li>Africa</li>
-                            <li>Asia</li>
-                            <li>North America</li>
-                            <li>South America</li>
-                            <li>Europe</li>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>Tailwindcss</li>
+                            <li>Headless CMS</li>
+                            <li>Firebase</li>
                         </ul>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
