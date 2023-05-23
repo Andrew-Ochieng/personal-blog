@@ -6,9 +6,10 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     const navLinks = [
-        {id: 1,name: "Home", route: "/"},
-        {id: 2,name: "About", route: "/about"},
-        {id: 2,name: "Articles", route: "/articles"},
+        {id: 1,name: "Web", route: "/web"},
+        {id: 2,name: "Graphics", route: "/graphics"},
+        {id: 3,name: "UI/UX", route: "/uidesign"},
+        {id: 4,name: "Dev Ops", route: "/devops"},
     ]
 
     return (
@@ -26,8 +27,11 @@ const Navbar = () => {
 
                     <div className='md:flex hidden text-gray-700'>
                         <ul className="md:flex items-center md:text-lg font-medium">
+                            <li className='md:mx-8 md:my-0 my-2 hover:text-green-100'>
+                                <a href='#about-me' >About</a>
+                            </li>
                             {navLinks.map((nav) => (
-                                <li key={nav.id} className="navlink md:mx-4 mx-2 md:my-0 my-2">
+                                <li key={nav.id} className="navlink md:mx-4 mx-2 md:my-0 my-2 hover:text-green-100">
                                     <Link to={nav.route}>
                                         {nav.name}
                                     </Link>
@@ -45,16 +49,16 @@ const Navbar = () => {
                         </button> 
                     </div>
                     <ul className="flex flex-col items-center text-base font-medium space-y-8">
+                        <li className='md:mx-8 md:my-0 my-2 hover:text-green-100'>
+                            <a href='#about-me' >About</a>
+                        </li>
                         {navLinks.map((nav) => (
-                            <li key={nav.id} onClick={() => setOpen((prev) => !prev)} className="navlink md:mx-4 mx-2 md:my-0 my-2">
+                            <li key={nav.id} onClick={() => setOpen((prev) => !prev)} className="navlink md:mx-4 mx-2 md:my-0 my-2 hover:text-green-100">
                                 <Link to={nav.route}>
                                     {nav.name}
                                 </Link>
                             </li>
                         ))}
-                        {/* <li className='md:mx-8 md:my-0 my-2'>
-                            <a href='#about-me' >About</a>
-                        </li> */}
                     </ul>
                 </div>
             </nav>

@@ -20,14 +20,14 @@ const Footer = () => {
                         <h3 className="font-medium text-green-500 md:text-xl text-lg">Categories</h3>
                         <ul className="space-y-1">
                             <li>Web Dev</li>
-                            <li>Mobile Dev</li>
                             <li>UI/UX Design</li>
+                            <li>Data Science</li>
                             <li>Graphics Design</li>
-                            <li>Cyber Security</li>
+                            <li>Dev Ops</li>
                         </ul>
                     </div>
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
-                        <h3 className="font-medium text-green-500 md:text-xl text-lg">Popular Topics</h3>
+                        <h3 className="font-medium text-green-500 md:text-xl text-lg">Frontend Topics</h3>
                         <ul className="space-y-1">
                             <li>Javascript</li>
                             <li>React</li>

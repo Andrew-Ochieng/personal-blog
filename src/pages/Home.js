@@ -1,3 +1,4 @@
+import About from "../components/About";
 import BlogList from "../components/BlogList";
 import UseFetch from "../components/UseFetch"
 // import { useState } from "react";
@@ -22,11 +23,12 @@ const Home = ({blogs, error, isLoading}) => {
         { isLoading && <h4 className="text-green-500 font-semibold md:text-2xl text-xl">Loading data..</h4>}
         { error && <h4 className="text-red-500">{ error }</h4>}
         
-        <BlogList blogs={blogs} error={error} isLoading={isLoading} title = "All Blogs!"/>
+        <BlogList blogs={blogs} error={error} isLoading={isLoading} title = "Latest Blogs"/>
         
         {/* filter blogs */}
         <BlogList blogs={blogs.filter((blog) => blog.attributes.author === 'Andrew')} title = "Andrew's Blogs" />
 
+        <About />
       </div>
     );
 }
