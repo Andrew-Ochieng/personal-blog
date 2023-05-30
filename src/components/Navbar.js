@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"
+import {  FaTimes } from "react-icons/fa"
+import { HiMenuAlt3 } from "react-icons/hi"
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
                             TechShare
                         </Link>
                         <button onClick={() => setOpen((prev) => !prev)} className=' sm:hidden text-2xl text-gray-900'>
-                            <FaBars />
+                            <HiMenuAlt3 />
                         </button>
                     </div>
 

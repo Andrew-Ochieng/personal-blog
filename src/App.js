@@ -16,8 +16,6 @@ import Graphics from './pages/Graphics';
 function App() {
   const { data: blogs, error, isLoading} = UseFetch('http://localhost:1337/api/blogs?populate=image')
   // console.log(blogs)
-  const { data: categories } = UseFetch('http://localhost:1337/api/categories?populate=*')
-  // console.log(categories)
 
   return (
     <div>
@@ -27,10 +25,10 @@ function App() {
             <Routes>
               <Route path='/' element={ <Home blogs={blogs} error={error} isLoading={isLoading} /> }/>
               <Route path='/blogs/:id' element={ <BlogDetails blogs={blogs} error={error} isLoading={isLoading} /> }/>
-              <Route path='/uidesign' element={ <UIDesign categories={categories.filter((category) => category.attributes.name === "UI/UX Design")} /> }/>
-              <Route path='/web' element={ <Web categories={categories.filter((category) => category.attributes.name === "UI/UX Design")} /> }/>
-              <Route path='/devops' element={ <Devops categories={categories.filter((category) => category.attributes.name === "UI/UX Design")} /> }/>
-              <Route path='/graphics' element={ <Graphics categories={categories.filter((category) => category.attributes.name === "UI/UX Design")} /> }/>
+              <Route path='/uidesign' element={ <UIDesign blogs={blogs.filter((item) => item.attributes.category === "UI/UX Design")} /> } />
+              <Route path='/web' element={ <Web blogs={blogs.filter((item) => item.attributes.category === "Web Dev")} /> } />
+              <Route path='/devops' element={ <Devops blogs={blogs.filter((item) => item.attributes.category === "Dev Ops")} /> } />
+              <Route path='/graphics' element={ <Graphics blogs={blogs.filter((item) => item.attributes.category === "Graphics Design")} /> } />
             </Routes>
           <Footer />
         </div>

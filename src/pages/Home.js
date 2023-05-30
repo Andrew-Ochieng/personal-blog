@@ -1,21 +1,8 @@
 import About from "../components/About";
 import BlogList from "../components/BlogList";
-import UseFetch from "../components/UseFetch"
 // import { useState } from "react";
 
 const Home = ({blogs, error, isLoading}) => {
-  // const [search, setSearch] = useState("")
-
-  // const handleSearch = (e) => {
-  //   e.preventDefault()
-  //   setSearch(e.target.value)
-  // }
-  // const filteredBlogs = blogs.filter((blog) => blog.attributes.title.toLowerCase().includes(search.toLowerCase()))
-  // console.log(filteredBlogs)
-
-    const { data: categories } = UseFetch('http://localhost:1337/api/categories')
-    console.log(categories)
-
 
   return ( 
       <div className="home lg:mx-28 md:mx-12 mx-6 md:my-16 my-8">

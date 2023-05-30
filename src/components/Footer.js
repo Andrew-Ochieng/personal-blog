@@ -1,4 +1,5 @@
 import Subscribe from "./Subscribe";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return ( 
@@ -7,7 +8,10 @@ const Footer = () => {
             <footer className="bg-gray-900 ">
                 <div className="md:p-16 p-6 md:flex justify-around md:text-base text-sm"> 
                     <div className="text-gray-100 space-y-2 md:my-0 my-6">
-                        <h1 className="md:text-xl text-lg font-semibold uppercase text-green-500">Tech Talk</h1>
+                        <Link to='/' className="logo font-bold md:text-2xl text-lg text-green-500">
+                            TechShare
+                        </Link>
+                        {/* <h1 className="md:text-xl text-lg font-semibold uppercase text-green-500">Tech Talk</h1> */}
                         <p>Lorem ipsum dolor sit amet consectetur.</p>
                         <div className="space-x-4 text-xl">
                             <i className="hover:text-green-500 fa fa-facebook"></i>
